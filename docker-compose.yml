@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  database:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: conectar_soluciones_db
+     # Estas dos variables definen un usuario y clave especifico para la bbdd creada en mysql_database. son opcionales
+     #MYSQL_USER: <user_name>
+     #MYSQL_PASSWORD: <user_password>
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
